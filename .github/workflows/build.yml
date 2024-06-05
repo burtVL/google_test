@@ -25,6 +25,10 @@ jobs:
       uses: gradle/gradle-build-action@v3
       with:
         arguments: testClasses
+    - name: Run tests
+      uses: gradle/gradle-build-action@v3
+      with:
+        arguments: test --info
   auto-merge-dependabot:
     name: 🤖 Auto merge dependabot PR
     timeout-minutes: 10
