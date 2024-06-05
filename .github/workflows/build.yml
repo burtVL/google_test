@@ -25,12 +25,10 @@ jobs:
       uses: gradle/gradle-build-action@v3
       with:
         arguments: testClasses
-
-
   auto-merge-dependabot:
     name: 🤖 Auto merge dependabot PR
     timeout-minutes: 10
-    needs: [build-with-gradle, build-with-maven]
+    needs: [build-with-gradle]
     if: ${{ github.actor == 'dependabot[bot]' }}
     runs-on: ubuntu-latest
     permissions:
